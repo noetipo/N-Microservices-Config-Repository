@@ -62,6 +62,16 @@ Routes:
             TtlSeconds: 15
         AuthenticationOptions:
             AuthenticationProviderKey: ApiSecurityAuthenticationScheme
+    - DownstreamPathTemplate: /api/Report
+      DownstreamScheme: http
+      UpstreamPathTemplate: /api/Report
+      ServiceName: Microservices.Demo.Report.API
+      UpstreamHttpMethod:
+          - Post
+      FileCacheOptions:
+          TtlSeconds: 15
+      AuthenticationOptions:
+          AuthenticationProviderKey: ApiSecurityAuthenticationScheme
  #           AllowedScopes:
  #               -      
         RouteClaimsRequirement:
